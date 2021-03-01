@@ -17,7 +17,7 @@ let socket;
 const Chat = ({ location }) => {
   const [name, setName] = useState('');
   const [room, setRoom] = useState('');
-  const [users, setUsers] = useState('');
+  //const [users, setUsers] = useState('');
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
 
@@ -39,6 +39,7 @@ const Chat = ({ location }) => {
       socket.emit('disconnect');
       socket.off();
     };
+    // eslint-disable-next-line
   }, [ENDPOINT, location.search]);
 
   useEffect(() => {
@@ -56,7 +57,7 @@ const Chat = ({ location }) => {
     }
   }
 
-  console.log(message, messages)
+  //console.log(message, messages)
 
   return (
       <div className="outerContainer">
